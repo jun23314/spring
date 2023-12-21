@@ -3,10 +3,7 @@ package umc.spring.web.controller;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jdk.jfr.Label;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.java.Log;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,12 +21,6 @@ public class TempRestController {
 
     private final TempQueryService tempQueryService;
 
-    //private final TempQueryService tempQueryService;
-
-    /*@GetMapping("/test")
-    public ResponseDto<TempResponse.TempTestDTO> testAPI(){
-        return ResponseDto.onSuccess(TempConverter.toTempTestDTO(), Code.OK);
-    }*/
     @GetMapping("/test")
     public ApiResponse<TempTestDTO> testAPI() {
         return ApiResponse.onSuccess(TempConverter.toTempTestDTO());
